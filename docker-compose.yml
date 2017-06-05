@@ -1,9 +1,16 @@
 elkx:
   image: sebp/elkx:540
   environment:
-    ES_CONNECT_RETRY: 10
+    CLUSTER_NAME: "elkxCluster"
     ES_HEAP_SIZE: "2g"
-    MAX_OPEN_FILES: 65536
+
+    ELASTICSEARCH_START: 1  #0:es not be started
+    LOGSTASH_START: 1       #0:logstash not be started
+    KIBANA_START: 1         #0:logstash not be started
+
+    TZ: "Asia/Shanghai"
+    MAX_OPEN_FILES: 65536   #maximum number of open files
+    ES_CONNECT_RETRY: 10
   volumes:
     - ./etc/default/elasticsearch:/etc/default/elasticsearch
     - ./etc/elasticsearch/elasticsearch.yml:/etc/elasticsearch/elasticsearch.yml
