@@ -6,6 +6,6 @@ if [ $mmc -lt $MAX_MAP_COUNT ]
 then
 	echo "The operating system limits on mmap counts (vm.max_map_count = $mmc) is too low!"
 	echo "you can increase the limits by running the following command as root:"
-	echo -e "\n\tsysctl vm.max_map_count $MAX_MAP_COUNT\n"
+	echo -e "\n\tsysctl -w vm.max_map_count=$MAX_MAP_COUNT\n"
 	exit 1
 fi
