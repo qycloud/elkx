@@ -6,7 +6,7 @@ elkx:
     MAX_OPEN_FILES: 65536
   volumes:
     - ./etc/default/elasticsearch:/etc/default/elasticsearch
-    - ./etc/elasticsearch:/etc/elasticsearch
+    - ./etc/elasticsearch/elasticsearch.yml:/etc/elasticsearch/elasticsearch.yml
     - ./etc/logstash:/etc/logstash
     - ./etc/kibana/config/kibana.yml:/opt/kibana/config/kibana.yml
 
