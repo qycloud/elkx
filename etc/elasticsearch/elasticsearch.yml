@@ -53,6 +53,9 @@
 #
 # network.host: 192.168.0.1
 network.host: 0.0.0.0
+
+# network.publish_host: 192.168.0.100
+
 #
 # Set a custom port for HTTP:
 #
@@ -77,7 +80,7 @@ network.host: 0.0.0.0
 # Pass an initial list of hosts to perform discovery when new node is started:
 # The default list of hosts is ["127.0.0.1", "[::1]"]
 #
-# discovery.zen.ping.unicast.hosts: ["host1", "host2"]
+# discovery.zen.ping.unicast.hosts: ["host1", "host2", "192.168.0.100"]
 #
 # Prevent the "split brain" by configuring the majority of nodes (total number of nodes / 2 + 1):
 #
