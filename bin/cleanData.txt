@@ -1,0 +1,4 @@
+每天两点删除30天以前的数据
+打开crontab -e 加入以下内容，账号密码根据实际值修改
+
+* 2 * * * /usr/bin/curl --user elastic:changeme -H'Content-Type:application/json' -XPOST 'http://localhost:9200/nginx-access*/_delete_by_query' -d '{"query":{"range":{"@timestamp":{"lt":"now-30d","format":"epoch_millis"}}}}' > /tmp/elk_clean_result.log
