@@ -1,7 +1,7 @@
 elkx:
-  image: sebp/elkx:540
-  environment:
-    CLUSTER_NAME: "elkxCluster"
+  #image: sebp/elkx:540
+  image: sebp/elk:540
+  environment:   
     ES_HEAP_SIZE: "2g"
 
     ELASTICSEARCH_START: 1  #0:es not be started
@@ -21,7 +21,7 @@ elkx:
     - ./log:/var/log/
 
   ports:
-    - "5601:5601" #kibana
+    - "127.0.0.1:5601:5601" #kibana
     - "5044:5044" #logstash
-    - "9200:9200" #es
-    - "9300:9300" #es cluter
+    - "127.0.0.1:9200:9200" #es
+    - "127.0.0.1:9300:9300" #es cluter
